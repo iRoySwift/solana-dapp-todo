@@ -357,10 +357,6 @@ export const useTodo = () => {
         init();
     }, [init]);
 
-    // useEffect(() => {
-    //     initializeUser();
-    // }, [initializeUser]);
-
     useEffect(() => {
         setTodoList(preTodoList =>
             preTodoList.map(todo => {

@@ -1,10 +1,11 @@
 use anchor_lang::prelude::*;
 
 #[account]
-#[derive(Default, Debug)]
+#[derive(Default, Debug, anchor_lang::InitSpace)]
 pub struct TodoAccount {
     pub authority: Pubkey,
     pub idx: u8,
+    #[max_len(256)]
     pub content: String,
     pub marked: bool,
 }

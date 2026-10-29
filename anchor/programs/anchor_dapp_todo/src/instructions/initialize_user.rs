@@ -1,5 +1,5 @@
-use anchor_lang::prelude::*;
 use crate::states::user::UserAccount;
+use anchor_lang::prelude::*;
 
 pub fn initialize_user(ctx: Context<InitializeUser>) -> Result<()> {
     let user_account = &mut ctx.accounts.user_account;
@@ -12,6 +12,7 @@ pub fn initialize_user(ctx: Context<InitializeUser>) -> Result<()> {
 
 #[derive(Accounts)]
 #[instruction()]
+// #[derive(InitSpace)]
 pub struct InitializeUser<'info> {
     // We must specify the space in order to initialize an account.
     // First 8 bytes are default account discriminator,
